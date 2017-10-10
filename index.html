@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
   <meta charset="utf-8">
   <title>phonegap & jquery mobile boilerplate</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 
   <!--Inclusion of the mobile for responsiveness-->
+  <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
   <link rel="stylesheet" href="css/jquery.mobile.theme.css" />
-  <link rel="stylesheet" href="css/style.css"/>
+  
   
   <script>
   //Tyoes of OS
@@ -26,30 +30,55 @@
   </script>
   
   <!--//This should always be first-->
+  <script src="js/myjs.js"></script>
   <script src="js/lib/jquery.js"></script>
   <!-- your scripts here -->
   <script src="js/app/app.js"></script>
   <script src="js/app/bootstrap.js"></script>
   <script src="js/lib/jquery.mobile.js"></script>
-  
   </head>
   <body>
     
+    
     <div data-role="page">
-
     	<div data-role="header" class="header">
     		<h1>Ashesi University College</h1>
+       
     	</div><!-- /header -->
+     <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="cs.html">CS</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="ba.html">BA</a>
+            <a href="mis.html">MIS</a>
+        </div>
+         <!-- Use any element to open the sidenav -->
+        <span onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>  
+         <script>
+        /* Set the width of the side navigation to 250px */
+          function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
 
-    	<div data-role="content">	
+            /* Set the width of the side navigation to 0 */
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+      </script>
+
+    	<div data-role="content"  style="text-align: center;">   
+
+      <img src="image/ashesi6.jpg" style="text-align: center; height: 50%; width:80%; margin-left: 10%;"> 
         <h5>Welcome to Ashesi Univesity College</h5>
     		<p>Ashesi University mainly has 6 specific majors: </p>
-        <ul>Computer Science</ul>
-        <ul>Computer Engineering</ul>
-        <ul>Mechanical engineering</ul>
-        <ul>Electrical engineering</ul>
-        <ul>Management information system</ul>
-        <ul>Business Administration</ul>
+        <ul><a href="cs.html">Computer Science</a></ul>
+        <ul><a href="mis.html">Management information system</a></ul>
+        <ul><a href="ba.html">Business Administration</a></ul>
+        <ul><a href="engineering.html">Computer Engineering</a></ul>
+        <ul><a href="engineering.html">Mechanical engineering</a></ul>
+        <ul><a href="engineering.html">Electrical engineering</a></ul>
         <p>Apart from this majors, it adopts a liberal arts curriculeum meant to enable students to learn leadership, entrepreneurla skills and critical thinking.</p>
     	</div><!-- /content -->
 
@@ -58,6 +87,6 @@
     	</div><!-- /footer -->
 
     </div><!-- /page -->
-    
+   
   </body>
 </html>
